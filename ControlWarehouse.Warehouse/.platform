@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "ControlWarehouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7e9a3ff1-1374-45c4-9bce-3d936f220bac"
+  }
+}

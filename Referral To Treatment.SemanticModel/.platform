@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Referral To Treatment"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ff7a36b1-df90-48af-9d81-dc92a9c0a901"
+  }
+}

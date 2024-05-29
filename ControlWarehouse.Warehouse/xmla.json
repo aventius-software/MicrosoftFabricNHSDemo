@@ -1,0 +1,2054 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "DataSources",
+        "sourceLineageTag": "[dbo].[DataSources]",
+        "columns": [
+          {
+            "name": "DataSourceKey",
+            "dataType": "int64",
+            "sourceColumn": "DataSourceKey",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "DataSourceKey",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IsEnabled",
+            "dataType": "boolean",
+            "sourceColumn": "IsEnabled",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "IsEnabled",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IngestionMechanism",
+            "dataType": "string",
+            "sourceColumn": "IngestionMechanism",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "IngestionMechanism",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dataset",
+            "dataType": "string",
+            "sourceColumn": "Dataset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dataset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Subset",
+            "dataType": "string",
+            "sourceColumn": "Subset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Subset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Notebook",
+            "dataType": "string",
+            "sourceColumn": "Notebook",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Notebook",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Url",
+            "dataType": "string",
+            "sourceColumn": "Url",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Url",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DataFormat",
+            "dataType": "string",
+            "sourceColumn": "DataFormat",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DataFormat",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "JoinColumns",
+            "dataType": "string",
+            "sourceColumn": "JoinColumns",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "JoinColumns",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoLanding",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoLanding",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoLanding",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoStaging",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoStaging",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoStaging",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoWarehouse",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoWarehouse",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoWarehouse",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "LandingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LandingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "StagingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "StagingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "WarehouseErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedureSchema",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedureSchema",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedureSchema",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedureName",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedureName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedureName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedureParameter",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedureParameter",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedureParameter",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HasHeaderRow",
+            "dataType": "boolean",
+            "sourceColumn": "HasHeaderRow",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "HasHeaderRow",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Notes",
+            "dataType": "string",
+            "sourceColumn": "Notes",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Notes",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "DataSources",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "vwDataSources",
+        "sourceLineageTag": "[dbo].[vwDataSources]",
+        "columns": [
+          {
+            "name": "IngestionMechanism",
+            "dataType": "string",
+            "sourceColumn": "IngestionMechanism",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "IngestionMechanism",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dataset",
+            "dataType": "string",
+            "sourceColumn": "Dataset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dataset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Notebook",
+            "dataType": "string",
+            "sourceColumn": "Notebook",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Notebook",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Url",
+            "dataType": "string",
+            "sourceColumn": "Url",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Url",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DataFormat",
+            "dataType": "string",
+            "sourceColumn": "DataFormat",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DataFormat",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "JoinColumns",
+            "dataType": "string",
+            "sourceColumn": "JoinColumns",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "JoinColumns",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DataSourceKey",
+            "dataType": "int64",
+            "sourceColumn": "DataSourceKey",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "DataSourceKey",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Subset",
+            "dataType": "string",
+            "sourceColumn": "Subset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Subset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedure",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedure",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedure",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedureParameter",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedureParameter",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedureParameter",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoLanding",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoLanding",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoLanding",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoStaging",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoStaging",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoStaging",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoWarehouse",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoWarehouse",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoWarehouse",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "LandingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LandingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "StagingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "StagingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "WarehouseErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseTableName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseTableName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseTableName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseSchemaName",
+            "dataType": "string",
+            "sourceColumn": "WarehouseSchemaName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseSchemaName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HasHeaderRow",
+            "dataType": "boolean",
+            "sourceColumn": "HasHeaderRow",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "HasHeaderRow",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseDatasetName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseDatasetName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseDatasetName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseSubsetName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseSubsetName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseSubsetName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingDuration",
+            "dataType": "string",
+            "sourceColumn": "LandingDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LandingDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingDuration",
+            "dataType": "string",
+            "sourceColumn": "StagingDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "StagingDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseDuration",
+            "dataType": "string",
+            "sourceColumn": "WarehouseDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IsEnabled",
+            "dataType": "boolean",
+            "sourceColumn": "IsEnabled",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "IsEnabled",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingIsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "LandingIsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "LandingIsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingIsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "StagingIsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "StagingIsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseIsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "WarehouseIsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "WarehouseIsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "IsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "IsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalDuration",
+            "dataType": "string",
+            "sourceColumn": "TotalDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "TotalDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HasFailed",
+            "dataType": "boolean",
+            "sourceColumn": "HasFailed",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "HasFailed",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CurrentStep",
+            "dataType": "string",
+            "sourceColumn": "CurrentStep",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "CurrentStep",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vwDataSources",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "vwDataSourcesToProcess",
+        "sourceLineageTag": "[dbo].[vwDataSourcesToProcess]",
+        "columns": [
+          {
+            "name": "DataSourceKey",
+            "dataType": "int64",
+            "sourceColumn": "DataSourceKey",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "DataSourceKey",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IngestionMechanism",
+            "dataType": "string",
+            "sourceColumn": "IngestionMechanism",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "IngestionMechanism",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dataset",
+            "dataType": "string",
+            "sourceColumn": "Dataset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dataset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Subset",
+            "dataType": "string",
+            "sourceColumn": "Subset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Subset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseDatasetName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseDatasetName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseDatasetName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseSubsetName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseSubsetName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseSubsetName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseTableName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseTableName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseTableName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseSchemaName",
+            "dataType": "string",
+            "sourceColumn": "WarehouseSchemaName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseSchemaName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Notebook",
+            "dataType": "string",
+            "sourceColumn": "Notebook",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Notebook",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Url",
+            "dataType": "string",
+            "sourceColumn": "Url",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Url",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DataFormat",
+            "dataType": "string",
+            "sourceColumn": "DataFormat",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DataFormat",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HasHeaderRow",
+            "dataType": "boolean",
+            "sourceColumn": "HasHeaderRow",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "HasHeaderRow",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "JoinColumns",
+            "dataType": "string",
+            "sourceColumn": "JoinColumns",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "JoinColumns",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "LandingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LandingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingDuration",
+            "dataType": "string",
+            "sourceColumn": "LandingDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LandingDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "StagingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "StagingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingDuration",
+            "dataType": "string",
+            "sourceColumn": "StagingDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "StagingDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "WarehouseErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseDuration",
+            "dataType": "string",
+            "sourceColumn": "WarehouseDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedure",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedure",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedure",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedureParameter",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedureParameter",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedureParameter",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoLanding",
+            "dataType": "int64",
+            "sourceColumn": "ProcessIntoLanding",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ProcessIntoLanding",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoStaging",
+            "dataType": "int64",
+            "sourceColumn": "ProcessIntoStaging",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ProcessIntoStaging",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoWarehouse",
+            "dataType": "int64",
+            "sourceColumn": "ProcessIntoWarehouse",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "ProcessIntoWarehouse",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingIsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "LandingIsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "LandingIsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingIsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "StagingIsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "StagingIsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseIsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "WarehouseIsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "WarehouseIsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "IsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "IsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalDuration",
+            "dataType": "string",
+            "sourceColumn": "TotalDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "TotalDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HasFailed",
+            "dataType": "boolean",
+            "sourceColumn": "HasFailed",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "HasFailed",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "CurrentStep",
+            "dataType": "boolean",
+            "sourceColumn": "CurrentStep",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "CurrentStep",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vwDataSourcesToProcess",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "vwDataSourcesWithErrors",
+        "sourceLineageTag": "[dbo].[vwDataSourcesWithErrors]",
+        "columns": [
+          {
+            "name": "DataSourceKey",
+            "dataType": "int64",
+            "sourceColumn": "DataSourceKey",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "DataSourceKey",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IngestionMechanism",
+            "dataType": "string",
+            "sourceColumn": "IngestionMechanism",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "IngestionMechanism",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Dataset",
+            "dataType": "string",
+            "sourceColumn": "Dataset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Dataset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Subset",
+            "dataType": "string",
+            "sourceColumn": "Subset",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Subset",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseDatasetName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseDatasetName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseDatasetName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseSubsetName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseSubsetName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseSubsetName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LakehouseTableName",
+            "dataType": "string",
+            "sourceColumn": "LakehouseTableName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LakehouseTableName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseSchemaName",
+            "dataType": "string",
+            "sourceColumn": "WarehouseSchemaName",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseSchemaName",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Notebook",
+            "dataType": "string",
+            "sourceColumn": "Notebook",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Notebook",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Url",
+            "dataType": "string",
+            "sourceColumn": "Url",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Url",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "DataFormat",
+            "dataType": "string",
+            "sourceColumn": "DataFormat",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "DataFormat",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "HasHeaderRow",
+            "dataType": "boolean",
+            "sourceColumn": "HasHeaderRow",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "HasHeaderRow",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "JoinColumns",
+            "dataType": "string",
+            "sourceColumn": "JoinColumns",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "JoinColumns",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoLanding",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoLanding",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoLanding",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoStaging",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoStaging",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoStaging",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "ProcessIntoWarehouse",
+            "dataType": "boolean",
+            "sourceColumn": "ProcessIntoWarehouse",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "ProcessIntoWarehouse",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "LandingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "LandingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "LandingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LandingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "LandingDuration",
+            "dataType": "string",
+            "sourceColumn": "LandingDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "LandingDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "StagingCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "StagingCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "StagingErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "StagingErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "StagingDuration",
+            "dataType": "string",
+            "sourceColumn": "StagingDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "StagingDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseStartedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseStartedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseStartedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseCompletedDateTime",
+            "dataType": "dateTime",
+            "sourceColumn": "WarehouseCompletedDateTime",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "WarehouseCompletedDateTime",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseErrorMessage",
+            "dataType": "string",
+            "sourceColumn": "WarehouseErrorMessage",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseErrorMessage",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseDuration",
+            "dataType": "string",
+            "sourceColumn": "WarehouseDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedure",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedure",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedure",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "WarehouseProcedureParameter",
+            "dataType": "string",
+            "sourceColumn": "WarehouseProcedureParameter",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "WarehouseProcedureParameter",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "IsInProgress",
+            "dataType": "boolean",
+            "sourceColumn": "IsInProgress",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "bit",
+            "sourceLineageTag": "IsInProgress",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "TotalDuration",
+            "dataType": "string",
+            "sourceColumn": "TotalDuration",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "TotalDuration",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vwDataSourcesWithErrors",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"vwDataSources\",\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"vwDataSourcesToProcess\",\"vwDataSourcesWithErrors\",\"DataSources\"]"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

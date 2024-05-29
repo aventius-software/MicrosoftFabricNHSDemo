@@ -1,0 +1,5343 @@
+{
+  "compatibilityLevel": 1604,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.129.7286.4 (Main)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DatabaseQuery\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"WebModelingEdit\"]"
+      }
+    ],
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "annotations": [
+          {
+            "name": "PBI_IncludeFutureArtifacts",
+            "value": "False"
+          }
+        ],
+        "expression": [
+          "let",
+          "    database = Sql.Database(\"ALPH2LLJTDCUNPG75JOCONOC2Q-MN5CS7NM5X6ERGDVMXN7SVDE3M.datawarehouse.fabric.microsoft.com\", \"7b9b162c-6eeb-4af1-946d-72ca1614d795\")",
+          "in",
+          "    database"
+        ],
+        "kind": "m",
+        "lineageTag": "eaf47fc2-bf0c-42f6-bd9e-0204521dfbc0"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "90a8e18b-83d0-9778-52c3-eefd97f5028b",
+        "fromColumn": "ChronologicalWeekTimeBandingKey",
+        "fromTable": "Patients Waiting Monthly",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "ChronologicalWeekTimeBandingKey",
+        "toTable": "Week Time Banding"
+      },
+      {
+        "name": "ab3a058e-2546-a787-96b4-d42b3f5fc069",
+        "fromColumn": "ProviderOrganisationKey",
+        "fromTable": "Patients Waiting Monthly",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "ProviderOrganisationKey",
+        "toTable": "Provider Organisation"
+      },
+      {
+        "name": "2b123695-1bfa-757d-5427-0a7c40408e55",
+        "fromColumn": "TreatmentFunctionKey",
+        "fromTable": "Patients Waiting Monthly",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "TreatmentFunctionKey",
+        "toTable": "Treatment Function"
+      },
+      {
+        "name": "2d4de9db-2d7c-4374-77e3-405843adf22d",
+        "fromColumn": "WaitingStatusKey",
+        "fromTable": "Patients Waiting Monthly",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "WaitingStatusKey",
+        "toTable": "Waiting Status"
+      },
+      {
+        "name": "aaa4cb4d-244a-1e25-d54e-88b7ae1284cc",
+        "fromColumn": "ChronologicalCalendarKey",
+        "fromTable": "Patients Waiting Monthly",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "ChronologicalCalendarKey",
+        "toTable": "Calendar"
+      },
+      {
+        "name": "d0b0f011-3c8c-4bde-4cbb-f6cfea3e03e7",
+        "fromColumn": "CommissionerOrganisationKey",
+        "fromTable": "Patients Waiting Monthly",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "CommissionerOrganisationKey",
+        "toTable": "Commissioner Organisation"
+      },
+      {
+        "name": "5875a796-19dd-d628-4aba-7da20800853b",
+        "fromColumn": "Organisation Code",
+        "fromTable": "Provider Organisation",
+        "relyOnReferentialIntegrity": true,
+        "toColumn": "Organisation Code",
+        "toTable": "Provider Address Book"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "Patients Waiting Monthly",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "PatientsWaitingMonthlyKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "709a7d6e-4cb7-48cd-930e-f64f3e6896eb",
+            "sourceColumn": "PatientsWaitingMonthlyKey",
+            "sourceLineageTag": "PatientsWaitingMonthlyKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "DateTimeLoaded",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "1a2cb9f9-da1e-402a-acaf-130a7f9faaea",
+            "sourceColumn": "DateTimeLoaded",
+            "sourceLineageTag": "DateTimeLoaded",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "d88fb290-5c92-4c80-a847-b474caa8b7a8",
+            "sourceColumn": "DateTimeUpdated",
+            "sourceLineageTag": "DateTimeUpdated",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeDeleted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "c050c9ec-c17e-4d69-a3c0-e4c94c98c089",
+            "sourceColumn": "DateTimeDeleted",
+            "sourceLineageTag": "DateTimeDeleted",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HighWatermark",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "7d2752e8-bf4d-4559-94c2-8ef9417b3c5c",
+            "sourceColumn": "HighWatermark",
+            "sourceLineageTag": "HighWatermark",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ChronologicalCalendarKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "a22c4c9b-2339-4bc4-a4a2-c66008ce0de9",
+            "sourceColumn": "ChronologicalCalendarKey",
+            "sourceLineageTag": "ChronologicalCalendarKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProviderOrganisationKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "06f73c9f-c850-413c-82fe-d8a4cd0e91e9",
+            "sourceColumn": "ProviderOrganisationKey",
+            "sourceLineageTag": "ProviderOrganisationKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CommissionerOrganisationKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "1124dd86-74bd-4431-ad13-b0477d9ca989",
+            "sourceColumn": "CommissionerOrganisationKey",
+            "sourceLineageTag": "CommissionerOrganisationKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WaitingStatusKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "e6131d5d-2178-41a6-b968-2f7449db1341",
+            "sourceColumn": "WaitingStatusKey",
+            "sourceLineageTag": "WaitingStatusKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TreatmentFunctionKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "0b2bc3a6-ab52-493e-89ba-48f538bac4c2",
+            "sourceColumn": "TreatmentFunctionKey",
+            "sourceLineageTag": "TreatmentFunctionKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ChronologicalWeekTimeBandingKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "cf841704-7426-42ad-80b1-bf115bc977d8",
+            "sourceColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceLineageTag": "ChronologicalWeekTimeBandingKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Number Of Patients Waiting",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "ef465d5c-6e98-44f4-9227-1956ecc84b2d",
+            "sourceColumn": "NumberOfPatientsWaiting",
+            "sourceLineageTag": "NumberOfPatientsWaiting",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "a2a20729-ac79-4689-ab94-d9debf67e9bb",
+        "measures": [
+          {
+            "name": "Total Number Of Patients (At Period End)",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Total Number Of Patients],",
+              "    LASTNONBLANK(",
+              "        'Calendar'[Date],",
+              "        [Total Number Of Patients]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "4ecf87ff-4fce-44ba-8c2b-870b74e4b656"
+          },
+          {
+            "name": "Total Number Of Patients",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": "SUM('Patients Waiting Monthly'[Number Of Patients Waiting])",
+            "formatString": "0",
+            "lineageTag": "1a1d4e18-039a-4992-95a2-ba562ffb0fd0"
+          },
+          {
+            "name": "Median Waiting Time (At Period End)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Median Waiting Time],",
+              "    LASTNONBLANK(",
+              "        'Calendar'[Date],",
+              "        [Median Waiting Time]",
+              "    ),",
+              "    FILTER(     ",
+              "        'Week Time Banding',",
+              "        'Week Time Banding'[ChronologicalWeekTimeBandingKey] >= 0",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "418287df-1987-4d98-b0b6-756e81498597"
+          },
+          {
+            "name": "Average Waiting Time",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": "AVERAGE('Week Time Banding'[Number Of Weeks])",
+            "lineageTag": "da385f2c-72dc-4ad6-b96f-a89ef892c791"
+          },
+          {
+            "name": "% Of Patients Waiting Under 18 Weeks",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": "[Total Number Of Patients Waiting Under 18 Weeks] / [Total Number Of Patients]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "16d49b69-67d6-48d4-8eb0-9131570f029b"
+          },
+          {
+            "name": "Total Number Of Patients Waiting Under 18 Weeks",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Total Number Of Patients],",
+              "    FILTER(",
+              "        'Week Time Banding',",
+              "        'Week Time Banding'[Is Under 18 Weeks] = TRUE() && 'Week Time Banding'[ChronologicalWeekTimeBandingKey] >= 0",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "7a52d941-09c1-4d02-b6e6-c4b2536c7aa9"
+          },
+          {
+            "name": "Average Waiting Time (At Period End)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    AVERAGE('Week Time Banding'[Number Of Weeks]),",
+              "    LASTNONBLANK(",
+              "        'Calendar'[Date],",
+              "        AVERAGE('Week Time Banding'[Number Of Weeks])",
+              "    ),",
+              "    FILTER(",
+              "        'Week Time Banding',",
+              "        'Week Time Banding'[ChronologicalWeekTimeBandingKey] >= 0",
+              "    )",
+              ")"
+            ],
+            "lineageTag": "c4ad9026-1ee7-4ffd-871e-6cf912574b9c"
+          },
+          {
+            "name": "% Of Patients Waiting Under 18 Weeks (At Period End)",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [% Of Patients Waiting Under 18 Weeks],",
+              "    LASTNONBLANK(",
+              "        'Calendar'[Date],",
+              "        [% Of Patients Waiting Under 18 Weeks]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "f41e102e-a5a7-4d3b-802c-4b578c55cf36"
+          },
+          {
+            "name": "Total Number Of Patients Waiting Under 18 Weeks (At Period End)",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Total Number Of Patients Waiting Under 18 Weeks],",
+              "    LASTNONBLANK(",
+              "        'Calendar'[Date],",
+              "        [Total Number Of Patients Waiting Under 18 Weeks]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "629328c6-3c25-4c09-9141-dd3d3eda6926"
+          },
+          {
+            "name": "Median Waiting Time",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": "MEDIAN('Week Time Banding'[Number Of Weeks])",
+            "lineageTag": "7da7e025-2677-4641-a7e4-e574aeb902d5"
+          },
+          {
+            "name": "Total Number Of Patients For Previous Year",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Total Number Of Patients],",
+              "    SAMEPERIODLASTYEAR('Calendar'[Date])",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "fb2aa5a9-be55-4b33-9511-881f49f6227d"
+          },
+          {
+            "name": "Total Number Of Patients For Previous Year (At Period End)",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Total Number Of Patients (At Period End)],",
+              "    SAMEPERIODLASTYEAR('Calendar'[Date])",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "99c0e7ee-2940-48c2-ba4c-4d6912345db9"
+          },
+          {
+            "name": "Total Number Of Patients Waiting Over 18 Weeks",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Total Number Of Patients],",
+              "    FILTER(",
+              "        'Week Time Banding',",
+              "        'Week Time Banding'[Is Under 18 Weeks] = FALSE() && 'Week Time Banding'[ChronologicalWeekTimeBandingKey] >= 0",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "7d2a8972-3cb2-48c1-8169-cff0de3ff9e9"
+          },
+          {
+            "name": "Total Number Of Patients Waiting Over 18 Weeks (At Period End)",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [Total Number Of Patients Waiting Over 18 Weeks],",
+              "    LASTNONBLANK(",
+              "        'Calendar'[Date],",
+              "        [Total Number Of Patients Waiting Over 18 Weeks]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "01c3e4b8-68fe-4fe9-83b3-374a1128b94c"
+          },
+          {
+            "name": "% Of Patients Waiting Over 18 Weeks",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "displayFolder": "Total Measures",
+            "expression": "[Total Number Of Patients Waiting Over 18 Weeks] / [Total Number Of Patients]",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b3136c52-5daa-4e59-93ca-e64ca9ff68b6"
+          },
+          {
+            "name": "% Of Patients Waiting Over 18 Weeks (At Period End)",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [% Of Patients Waiting Over 18 Weeks],",
+              "    LASTNONBLANK(",
+              "        'Calendar'[Date],",
+              "        [% Of Patients Waiting Over 18 Weeks]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "c81f3ad3-e340-480f-a28e-6b122f7e923c"
+          },
+          {
+            "name": "% Of Patients Waiting Over 18 Weeks For Previous Year (At Period End)",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "displayFolder": "Period End Measures",
+            "expression": [
+              "CALCULATE(",
+              "    [% Of Patients Waiting Over 18 Weeks (At Period End)],",
+              "    SAMEPERIODLASTYEAR('Calendar'[Date])",
+              ")"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b2098b3b-795d-49ab-94f2-e78230303699"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Patients Waiting Monthly",
+            "mode": "directLake",
+            "source": {
+              "entityName": "PatientsWaitingMonthly",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "ReferralToTreatmentFact",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[ReferralToTreatmentFact].[PatientsWaitingMonthly]"
+      },
+      {
+        "name": "Waiting Status",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "WaitingStatusKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "89531de0-3b71-4fda-9ffc-1fb07668dd59",
+            "sourceColumn": "WaitingStatusKey",
+            "sourceLineageTag": "WaitingStatusKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeLoaded",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "486350ca-0e6a-4c0c-9d1f-d5932904f46e",
+            "sourceColumn": "DateTimeLoaded",
+            "sourceLineageTag": "DateTimeLoaded",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "43462067-b9d5-4a92-a872-861ca28456ae",
+            "sourceColumn": "DateTimeUpdated",
+            "sourceLineageTag": "DateTimeUpdated",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeDeleted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "1225af8d-b8fa-432c-8213-e37d9c682df7",
+            "sourceColumn": "DateTimeDeleted",
+            "sourceLineageTag": "DateTimeDeleted",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Hidden Fields",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isHidden": true,
+            "lineageTag": "6035906a-2f8f-4782-8a9a-58e73cc96b9d",
+            "sourceColumn": "IsCurrent",
+            "sourceLineageTag": "IsCurrent",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidFromDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "179fb420-019a-4be0-9ee5-942c85feb1fc",
+            "sourceColumn": "ValidFromDate",
+            "sourceLineageTag": "ValidFromDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidToDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "934193b1-7d46-4c09-92a6-9d2bbb73dffd",
+            "sourceColumn": "ValidToDate",
+            "sourceLineageTag": "ValidToDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HighWatermark",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "84371ba1-06f8-41d8-954b-1082b81b0b4b",
+            "sourceColumn": "HighWatermark",
+            "sourceLineageTag": "HighWatermark",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Waiting Status Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c537e984-cdb3-4970-af47-c14ae32d1573",
+            "sourceColumn": "WaitingStatusType",
+            "sourceLineageTag": "WaitingStatusType",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Waiting Status Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b7923575-8b97-48ff-8e94-0bd2aedae87c",
+            "sourceColumn": "WaitingStatusDescription",
+            "sourceLineageTag": "WaitingStatusDescription",
+            "sourceProviderType": "varchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Waiting Status Category",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c9f09d2d-d0a0-40a8-a6b2-79c5987d4441",
+            "sourceColumn": "WaitingStatusCategory",
+            "sourceLineageTag": "WaitingStatusCategory",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "11f1691e-60b5-42a5-a0a5-757f990ec150",
+        "partitions": [
+          {
+            "name": "Waiting Status",
+            "mode": "directLake",
+            "source": {
+              "entityName": "WaitingStatus",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "ReferralToTreatmentDimension",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[ReferralToTreatmentDimension].[WaitingStatus]"
+      },
+      {
+        "name": "Provider Organisation",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ProviderOrganisationKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "84923aa0-9101-4cb4-a34d-a7a47f4ed1cd",
+            "sourceColumn": "ProviderOrganisationKey",
+            "sourceLineageTag": "ProviderOrganisationKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeLoaded",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "6c5f8ce0-746d-42d3-98c9-27728bfad06d",
+            "sourceColumn": "DateTimeLoaded",
+            "sourceLineageTag": "DateTimeLoaded",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "8e9ad3fe-35f9-4e69-8bb3-4c228a14ee31",
+            "sourceColumn": "DateTimeUpdated",
+            "sourceLineageTag": "DateTimeUpdated",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeDeleted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "0649401b-70a4-411c-9ce3-7676e7f77b1e",
+            "sourceColumn": "DateTimeDeleted",
+            "sourceLineageTag": "DateTimeDeleted",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Hidden Fields",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isHidden": true,
+            "lineageTag": "e91d12f3-5d72-4895-bede-6be76fcff55c",
+            "sourceColumn": "IsCurrent",
+            "sourceLineageTag": "IsCurrent",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidFromDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "e9a3b714-376c-4ce3-9639-1ad366c428c0",
+            "sourceColumn": "ValidFromDate",
+            "sourceLineageTag": "ValidFromDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidToDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "6048a31d-f070-4bfe-995d-546a99731fa4",
+            "sourceColumn": "ValidToDate",
+            "sourceLineageTag": "ValidToDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HighWatermark",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "5542db96-1ce7-4c24-807c-94468d9e5eb3",
+            "sourceColumn": "HighWatermark",
+            "sourceLineageTag": "HighWatermark",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organisation Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e01c1b1b-ba50-4a51-a36d-35566c42ec0e",
+            "sourceColumn": "OrganisationCode",
+            "sourceLineageTag": "OrganisationCode",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organisation Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bcc87107-3c98-406c-8500-1dd88c8c22ea",
+            "sourceColumn": "OrganisationName",
+            "sourceLineageTag": "OrganisationName",
+            "sourceProviderType": "varchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Parent Organisation Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "86247c5c-0981-42ac-9532-5a198fc242c6",
+            "sourceColumn": "ParentOrganisationCode",
+            "sourceLineageTag": "ParentOrganisationCode",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Parent Organisation Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e85752dd-5d8b-44b1-ab65-fb17da630460",
+            "sourceColumn": "ParentOrganisationName",
+            "sourceLineageTag": "ParentOrganisationName",
+            "sourceProviderType": "varchar(500)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b630f158-2c9e-4667-a8c8-75974b58f58d",
+        "partitions": [
+          {
+            "name": "Provider Organisation",
+            "mode": "directLake",
+            "source": {
+              "entityName": "ProviderOrganisation",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "ReferralToTreatmentDimension",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[ReferralToTreatmentDimension].[ProviderOrganisation]"
+      },
+      {
+        "name": "Treatment Function",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "TreatmentFunctionKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "41cf996e-4489-4fab-bfc1-014ae7e78378",
+            "sourceColumn": "TreatmentFunctionKey",
+            "sourceLineageTag": "TreatmentFunctionKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeLoaded",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "1fc85d3d-da82-4df1-8f0b-21a4f9fa324a",
+            "sourceColumn": "DateTimeLoaded",
+            "sourceLineageTag": "DateTimeLoaded",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "3b2ad2ac-c930-4cc0-8e3b-2391a3b8889a",
+            "sourceColumn": "DateTimeUpdated",
+            "sourceLineageTag": "DateTimeUpdated",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeDeleted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "139664b0-c6da-43a8-a7ca-b26680da67d2",
+            "sourceColumn": "DateTimeDeleted",
+            "sourceLineageTag": "DateTimeDeleted",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Hidden Fields",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isHidden": true,
+            "lineageTag": "bc582b35-2871-4749-8be5-1e0fd98bc5ee",
+            "sourceColumn": "IsCurrent",
+            "sourceLineageTag": "IsCurrent",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidFromDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "8d6d1206-73b9-4092-9f36-e0acee0ccc09",
+            "sourceColumn": "ValidFromDate",
+            "sourceLineageTag": "ValidFromDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidToDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "cc39c2bb-a8ba-47b6-8842-79b76beb2f1c",
+            "sourceColumn": "ValidToDate",
+            "sourceLineageTag": "ValidToDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HighWatermark",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "efbad864-655b-479d-88ff-7282a95f549e",
+            "sourceColumn": "HighWatermark",
+            "sourceLineageTag": "HighWatermark",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Treatment Function Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8105fc4b-8f6f-41a5-90e4-0647b8dd340a",
+            "sourceColumn": "TreatmentFunctionCode",
+            "sourceLineageTag": "TreatmentFunctionCode",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Treatment Function Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7682963a-5b19-40ed-a3e2-626285eda999",
+            "sourceColumn": "TreatmentFunctionName",
+            "sourceLineageTag": "TreatmentFunctionName",
+            "sourceProviderType": "varchar(500)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "52c70309-4b6e-4ec5-9b85-a8545cc53cbc",
+        "partitions": [
+          {
+            "name": "Treatment Function",
+            "mode": "directLake",
+            "source": {
+              "entityName": "TreatmentFunction",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "ReferralToTreatmentDimension",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[ReferralToTreatmentDimension].[TreatmentFunction]"
+      },
+      {
+        "name": "Week Time Banding",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ChronologicalWeekTimeBandingKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "3e89e692-c05f-49b6-92dc-df33457ea6a5",
+            "sourceColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceLineageTag": "ChronologicalWeekTimeBandingKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Number Of Weeks",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Values",
+            "formatString": "0",
+            "lineageTag": "043db8ee-9dc4-470d-a67a-7169f8ad8f5f",
+            "sourceColumn": "NumberOfWeeks",
+            "sourceLineageTag": "NumberOfWeeks",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Greater Than One Week Band Short Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Greater Than",
+            "lineageTag": "9cc7dffc-4380-4ddd-ba21-4aabdb04a5d9",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "GreaterThanOneWeekBandShortDescription",
+            "sourceLineageTag": "GreaterThanOneWeekBandShortDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Greater Than One Week Band Long Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Greater Than",
+            "lineageTag": "fdf78642-0ba4-4002-bc32-321befcf0d18",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "GreaterThanOneWeekBandLongDescription",
+            "sourceLineageTag": "GreaterThanOneWeekBandLongDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Greater Than Two Weeks Band Short Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Greater Than",
+            "lineageTag": "86c9ec8b-bf1b-4c2d-8344-48d8b0b15392",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "GreaterThanTwoWeeksBandShortDescription",
+            "sourceLineageTag": "GreaterThanTwoWeeksBandShortDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Greater Than Two Weeks Band Long Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Greater Than",
+            "lineageTag": "4f0a08ae-4d6e-4205-b9be-eaee7d17cdaf",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "GreaterThanTwoWeeksBandLongDescription",
+            "sourceLineageTag": "GreaterThanTwoWeeksBandLongDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Greater Than Three Weeks Band Short Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Greater Than",
+            "lineageTag": "21af8407-f353-4f5e-8ca4-9da3179db24d",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "GreaterThanThreeWeeksBandShortDescription",
+            "sourceLineageTag": "GreaterThanThreeWeeksBandShortDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Greater Than Three Weeks Band Long Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Greater Than",
+            "lineageTag": "2edd451d-a55a-4a45-8c42-abfa1083e319",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "GreaterThanThreeWeeksBandLongDescription",
+            "sourceLineageTag": "GreaterThanThreeWeeksBandLongDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Greater Than One Week Band Short Description Limited To 104 Weeks",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Greater Than",
+            "lineageTag": "44a3fdbd-64d3-4ad2-b34e-eae2e20b63f5",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "GreaterThanOneWeekBandShortDescriptionLimitedTo104Weeks",
+            "sourceLineageTag": "GreaterThanOneWeekBandShortDescriptionLimitedTo104Weeks",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "One Week Or Over Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Over Or Under",
+            "lineageTag": "90b508a9-a949-481a-ad7a-78617b2df97b",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "OneWeekOrOverDescription",
+            "sourceLineageTag": "OneWeekOrOverDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Two Weeks Or Over Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Over Or Under",
+            "lineageTag": "3c21969a-5102-4e4b-97cf-124c15e411a7",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "TwoWeeksOrOverDescription",
+            "sourceLineageTag": "TwoWeeksOrOverDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Three Weeks Or Over Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Over Or Under",
+            "lineageTag": "59bd1d31-5cfa-418f-bc05-1a50cfbd8883",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "ThreeWeeksOrOverDescription",
+            "sourceLineageTag": "ThreeWeeksOrOverDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "One Week Or Under Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Over Or Under",
+            "lineageTag": "0b23d044-ffa8-45a9-be1c-8e2e0370bdb4",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "OneWeekOrUnderDescription",
+            "sourceLineageTag": "OneWeekOrUnderDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Two Weeks Or Under Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Over Or Under",
+            "lineageTag": "52e141f1-ce86-430c-a962-fe5a3e0a9512",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "TwoWeeksOrUnderDescription",
+            "sourceLineageTag": "TwoWeeksOrUnderDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Three Weeks Or Under Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Over Or Under",
+            "lineageTag": "e26611fb-ed78-441c-b6bb-12c120c1602b",
+            "sortByColumn": "ChronologicalWeekTimeBandingKey",
+            "sourceColumn": "ThreeWeeksOrUnderDescription",
+            "sourceLineageTag": "ThreeWeeksOrUnderDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Is Under 18 Weeks",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "fc83ca97-3134-4983-9bab-e5daf2bc4066",
+            "sourceColumn": "IsUnder18Weeks",
+            "sourceLineageTag": "IsUnder18Weeks",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Is Under Or Equal To 18 Weeks",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "a4a399cb-3090-402c-8d7e-816a60936328",
+            "sourceColumn": "IsUnderOrEqualTo18Weeks",
+            "sourceLineageTag": "IsUnderOrEqualTo18Weeks",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Over Or Under 18 Weeks Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "18 Weeks",
+            "lineageTag": "49b2465b-597f-46d3-9a22-b3d24e587209",
+            "sourceColumn": "OverOrUnder18WeeksDescription",
+            "sourceLineageTag": "OverOrUnder18WeeksDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Over Or Under Or Equal To 18 Weeks Description",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "18 Weeks",
+            "lineageTag": "2656fd68-59e7-4935-bc1f-56e031a32723",
+            "sourceColumn": "OverOrUnderOrEqualTo18WeeksDescription",
+            "sourceLineageTag": "OverOrUnderOrEqualTo18WeeksDescription",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "eaa48fd2-93c8-4877-8f89-c8e8ad555e6d",
+        "partitions": [
+          {
+            "name": "Week Time Banding",
+            "mode": "directLake",
+            "source": {
+              "entityName": "WeekTimeBanding",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Chronological",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[Chronological].[WeekTimeBanding]"
+      },
+      {
+        "name": "Calendar",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ChronologicalCalendarKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "e68836a5-2910-47cb-915b-8e6fbef40188",
+            "sourceColumn": "ChronologicalCalendarKey",
+            "sourceLineageTag": "ChronologicalCalendarKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Calendar Dates",
+            "formatString": "General Date",
+            "isKey": true,
+            "lineageTag": "ef43fe38-e435-41da-968a-42cd29ad1996",
+            "sourceColumn": "CalendarDate",
+            "sourceLineageTag": "CalendarDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarDateTime",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "0072d985-0611-4efe-aef5-4eae1f361010",
+            "sourceColumn": "CalendarDateTime",
+            "sourceLineageTag": "CalendarDateTime",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "ebfa5a25-8a5d-4811-82b8-0faf531bd85b",
+            "sourceColumn": "CalendarYear",
+            "sourceLineageTag": "CalendarYear",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "c147b49e-5c6c-467d-92cf-fe3e1b8aa1c6",
+            "sourceColumn": "CalendarQuarter",
+            "sourceLineageTag": "CalendarQuarter",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "4d2e7b9f-232b-468a-868e-bdda883efac3",
+            "sourceColumn": "CalendarMonth",
+            "sourceLineageTag": "CalendarMonth",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarQuarterNameAndYearSortOrder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "6dbad7c5-717f-4334-9eb7-8e8d3620d45a",
+            "sourceColumn": "CalendarQuarterNameAndYearSortOrder",
+            "sourceLineageTag": "CalendarQuarterNameAndYearSortOrder",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarQuarterNameAndYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "edc4a940-6020-4ae6-8da6-774bfae5ba76",
+            "sortByColumn": "CalendarQuarterNameAndYearSortOrder",
+            "sourceColumn": "CalendarQuarterNameAndYear",
+            "sourceLineageTag": "CalendarQuarterNameAndYear",
+            "sourceProviderType": "varchar(7)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarMonthNameAndYearSortOrder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "55d2c9ba-b62d-4c5d-b89d-a09cf0bd6ecd",
+            "sourceColumn": "CalendarMonthNameAndYearSortOrder",
+            "sourceLineageTag": "CalendarMonthNameAndYearSortOrder",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CalendarMonthNameAndYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "196744be-f374-4514-8352-0625d880cf16",
+            "sortByColumn": "CalendarMonthNameAndYearSortOrder",
+            "sourceColumn": "CalendarMonthNameAndYear",
+            "sourceLineageTag": "CalendarMonthNameAndYear",
+            "sourceProviderType": "varchar(8)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day Of The Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Day Of The...",
+            "formatString": "0",
+            "lineageTag": "a267ba52-46fc-4fa6-833d-2c566d0a3d48",
+            "sourceColumn": "DayOfTheYear",
+            "sourceLineageTag": "DayOfTheYear",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day Of The Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Day Of The...",
+            "formatString": "0",
+            "lineageTag": "6282c300-b5ec-4775-8a94-16e1ef7f5c8e",
+            "sourceColumn": "DayOfTheQuarter",
+            "sourceLineageTag": "DayOfTheQuarter",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day Of The Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Day Of The...",
+            "formatString": "0",
+            "lineageTag": "418146c3-2dfa-4fa7-b3bc-ef973bed7558",
+            "sourceColumn": "DayOfTheMonth",
+            "sourceLineageTag": "DayOfTheMonth",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day Of The Week",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Day Of The...",
+            "formatString": "0",
+            "lineageTag": "dde371a5-a872-47a9-9e60-829823bb433b",
+            "sourceColumn": "DayOfTheWeek",
+            "sourceLineageTag": "DayOfTheWeek",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalYearSortOrder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "4790407b-bb58-4782-979c-e89ba0e338a4",
+            "sourceColumn": "FiscalYearSortOrder",
+            "sourceLineageTag": "FiscalYearSortOrder",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "0ece1d26-cf58-449a-9579-16f9117052e7",
+            "sortByColumn": "FiscalYearSortOrder",
+            "sourceColumn": "FiscalYear",
+            "sourceLineageTag": "FiscalYear",
+            "sourceProviderType": "varchar(7)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "261ae064-75e5-42a0-873d-cb7e571d87c6",
+            "sourceColumn": "FiscalQuarter",
+            "sourceLineageTag": "FiscalQuarter",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "e96dff5c-6f4e-42a3-b445-bd460bb9251e",
+            "sourceColumn": "FiscalMonth",
+            "sourceLineageTag": "FiscalMonth",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalDay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "b4f0373a-b493-4e0a-bb73-9e91a219eff6",
+            "sourceColumn": "FiscalDay",
+            "sourceLineageTag": "FiscalDay",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalQuarterName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "bbb9f551-43bd-45bb-b40e-c01caec0201a",
+            "sourceColumn": "FiscalQuarterName",
+            "sourceLineageTag": "FiscalQuarterName",
+            "sourceProviderType": "varchar(2)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalQuarterNameAndYearSortOrder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "4f29398d-8201-4c38-98c0-6cb3b6f0f2e6",
+            "sourceColumn": "FiscalQuarterNameAndYearSortOrder",
+            "sourceLineageTag": "FiscalQuarterNameAndYearSortOrder",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalQuarterNameAndYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "e5e19cd4-f457-4ad9-aa9d-975f0bd38cd2",
+            "sortByColumn": "FiscalQuarterNameAndYearSortOrder",
+            "sourceColumn": "FiscalQuarterNameAndYear",
+            "sourceLineageTag": "FiscalQuarterNameAndYear",
+            "sourceProviderType": "varchar(10)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalMonthNameAndYearSortOrder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "ea03b718-e263-400b-b49e-5025d46adfd4",
+            "sourceColumn": "FiscalMonthNameAndYearSortOrder",
+            "sourceLineageTag": "FiscalMonthNameAndYearSortOrder",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FiscalMonthNameAndYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "924bec01-2ccd-4e2d-903c-4290e30fd106",
+            "sortByColumn": "FiscalMonthNameAndYearSortOrder",
+            "sourceColumn": "FiscalMonthNameAndYear",
+            "sourceLineageTag": "FiscalMonthNameAndYear",
+            "sourceProviderType": "varchar(11)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fiscal Year Beginning Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Beginning Dates",
+            "formatString": "General Date",
+            "lineageTag": "480c40c7-d633-4baf-b816-6b2309123258",
+            "sourceColumn": "FiscalYearBeginningDate",
+            "sourceLineageTag": "FiscalYearBeginningDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fiscal Year Ending Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Ending Dates",
+            "formatString": "General Date",
+            "lineageTag": "1b9e7cbb-1459-4497-9df6-576765bdd3b4",
+            "sourceColumn": "FiscalYearEndingDate",
+            "sourceLineageTag": "FiscalYearEndingDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year Beginning Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Beginning Dates",
+            "formatString": "General Date",
+            "lineageTag": "7753656a-9eb2-4214-9947-13c14f067c8d",
+            "sourceColumn": "YearBeginningDate",
+            "sourceLineageTag": "YearBeginningDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quarter Beginning Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Beginning Dates",
+            "formatString": "General Date",
+            "lineageTag": "5053d06a-f3a8-434f-b135-e2800583338f",
+            "sourceColumn": "QuarterBeginningDate",
+            "sourceLineageTag": "QuarterBeginningDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month Beginning Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Beginning Dates",
+            "formatString": "General Date",
+            "lineageTag": "b6c07651-e686-45cf-a2b8-a78b516064e0",
+            "sourceColumn": "MonthBeginningDate",
+            "sourceLineageTag": "MonthBeginningDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Week Beginning Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Beginning Dates",
+            "formatString": "General Date",
+            "lineageTag": "26041cfe-c33b-4257-bb96-c5bca119985a",
+            "sourceColumn": "WeekBeginningDate",
+            "sourceLineageTag": "WeekBeginningDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year Ending Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Ending Dates",
+            "formatString": "General Date",
+            "lineageTag": "2c507660-f35a-4f8b-a609-28e7eae3d80f",
+            "sourceColumn": "YearEndingDate",
+            "sourceLineageTag": "YearEndingDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quarter Ending Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Ending Dates",
+            "formatString": "General Date",
+            "lineageTag": "7652c787-942c-4dbe-9b45-3fc563ef7fd7",
+            "sourceColumn": "QuarterEndingDate",
+            "sourceLineageTag": "QuarterEndingDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month Ending Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Ending Dates",
+            "formatString": "General Date",
+            "lineageTag": "f6a1e003-a2a4-4b1a-bbe1-73a1b5f68fae",
+            "sourceColumn": "MonthEndingDate",
+            "sourceLineageTag": "MonthEndingDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Week Ending Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Ending Dates",
+            "formatString": "General Date",
+            "lineageTag": "03d42f87-97d6-47e5-b254-d44dbf538254",
+            "sourceColumn": "WeekEndingDate",
+            "sourceLineageTag": "WeekEndingDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthNameSortOrder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "65b2723b-2b52-4921-97a3-af191baa86b5",
+            "sourceColumn": "MonthNameSortOrder",
+            "sourceLineageTag": "MonthNameSortOrder",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month Name Short",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Names",
+            "lineageTag": "1f270595-19dc-4bbf-8b40-c6b1129c1a16",
+            "sortByColumn": "MonthNameSortOrder",
+            "sourceColumn": "MonthNameShort",
+            "sourceLineageTag": "MonthNameShort",
+            "sourceProviderType": "varchar(3)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Month Name Long",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Names",
+            "lineageTag": "19b41f7a-5f77-49e7-b47b-e85d61f30402",
+            "sortByColumn": "MonthNameSortOrder",
+            "sourceColumn": "MonthNameLong",
+            "sourceLineageTag": "MonthNameLong",
+            "sourceProviderType": "varchar(15)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayNameSortOrder",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "22ab3a11-8ad8-49ab-856c-ad51543ba49b",
+            "sourceColumn": "DayNameSortOrder",
+            "sourceLineageTag": "DayNameSortOrder",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day Name Short",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Names",
+            "lineageTag": "c06fd785-7b2d-48b7-99a8-f0044cf00f50",
+            "sortByColumn": "DayNameSortOrder",
+            "sourceColumn": "DayNameShort",
+            "sourceLineageTag": "DayNameShort",
+            "sourceProviderType": "varchar(3)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Day Name Long",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              },
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Names",
+            "lineageTag": "b0c043a0-4d2e-4775-b210-982e4bb76e70",
+            "sortByColumn": "DayNameSortOrder",
+            "sourceColumn": "DayNameLong",
+            "sourceLineageTag": "DayNameLong",
+            "sourceProviderType": "varchar(15)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Number Of Days In Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Counts",
+            "formatString": "0",
+            "lineageTag": "94c7923c-9f8f-47a6-875d-f05e14ddf93f",
+            "sourceColumn": "NumberOfDaysInMonth",
+            "sourceLineageTag": "NumberOfDaysInMonth",
+            "sourceProviderType": "smallint",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsWeekend",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "4bcf6ef4-74a4-451d-8711-b5c9c5cc030f",
+            "sourceColumn": "IsWeekend",
+            "sourceLineageTag": "IsWeekend",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsWorkingDay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "31791fc3-f46d-418c-8891-9015ed97a7ea",
+            "sourceColumn": "IsWorkingDay",
+            "sourceLineageTag": "IsWorkingDay",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsUKBankHoliday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "3a79d8ff-93cd-4c67-b20a-35c88caba202",
+            "sourceColumn": "IsUKBankHoliday",
+            "sourceLineageTag": "IsUKBankHoliday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsNewYearsDay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "9b18a912-f80f-4be3-a23d-9f5388f8e10f",
+            "sourceColumn": "IsNewYearsDay",
+            "sourceLineageTag": "IsNewYearsDay",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsGoodFriday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "2252a0f4-965e-4f89-b915-5d145646081c",
+            "sourceColumn": "IsGoodFriday",
+            "sourceLineageTag": "IsGoodFriday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsEasterSunday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "63e4185c-cdcb-4a43-8db3-24459133bdea",
+            "sourceColumn": "IsEasterSunday",
+            "sourceLineageTag": "IsEasterSunday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsEasterMonday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "28360b9b-7094-4565-b98f-1b9c32d56d3f",
+            "sourceColumn": "IsEasterMonday",
+            "sourceLineageTag": "IsEasterMonday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsEarlyMayBankHoliday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "cc44aa10-247e-4c0c-9f5d-ebf1aa2d9646",
+            "sourceColumn": "IsEarlyMayBankHoliday",
+            "sourceLineageTag": "IsEarlyMayBankHoliday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsSpringBankHoliday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "6739885e-be6f-4eed-90fe-017b32904e90",
+            "sourceColumn": "IsSpringBankHoliday",
+            "sourceLineageTag": "IsSpringBankHoliday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsSummerBankHoliday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "fed60c96-f527-48c2-af4b-e29ada9e43b1",
+            "sourceColumn": "IsSummerBankHoliday",
+            "sourceLineageTag": "IsSummerBankHoliday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsChristmasDay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "114aa804-54f5-4e06-8e55-22b7adef6ad3",
+            "sourceColumn": "IsChristmasDay",
+            "sourceLineageTag": "IsChristmasDay",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsBoxingDay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "818a1505-3dbb-4b07-ad62-d90342f9cf2c",
+            "sourceColumn": "IsBoxingDay",
+            "sourceLineageTag": "IsBoxingDay",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLeapYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "3ce4b50d-cf81-4ba8-96b1-964726586c7d",
+            "sourceColumn": "IsLeapYear",
+            "sourceLineageTag": "IsLeapYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsPastDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "27e2baa7-287e-46ff-a57e-0b5bd523de98",
+            "sourceColumn": "IsPastDate",
+            "sourceLineageTag": "IsPastDate",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsYesterday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "3856e077-7e6b-4d86-bc00-ce47ea1a77b6",
+            "sourceColumn": "IsYesterday",
+            "sourceLineageTag": "IsYesterday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsToday",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "21fc2e66-6842-49b2-a36c-d6a4fb6bdfab",
+            "sourceColumn": "IsToday",
+            "sourceLineageTag": "IsToday",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsTomorrow",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "868ba570-482e-476d-867f-b981add6b7d7",
+            "sourceColumn": "IsTomorrow",
+            "sourceLineageTag": "IsTomorrow",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFutureDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "50e7f9e0-c64d-4f9a-bb82-2fce18fc7c21",
+            "sourceColumn": "IsFutureDate",
+            "sourceLineageTag": "IsFutureDate",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrentCalendarYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "dc6696ee-f49d-4e2f-9938-68ee4851e27c",
+            "sourceColumn": "IsCurrentCalendarYear",
+            "sourceLineageTag": "IsCurrentCalendarYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrentCalendarQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "a7da63be-ef91-4c7c-b03e-f8869eec5806",
+            "sourceColumn": "IsCurrentCalendarQuarter",
+            "sourceLineageTag": "IsCurrentCalendarQuarter",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrentMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "a20871c6-c28e-424d-a8d8-51c41ecbadd9",
+            "sourceColumn": "IsCurrentMonth",
+            "sourceLineageTag": "IsCurrentMonth",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrentWeek",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "580f0c8b-22a0-42fd-b0da-6923676efa32",
+            "sourceColumn": "IsCurrentWeek",
+            "sourceLineageTag": "IsCurrentWeek",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrentFiscalYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "e7f55c30-354a-42a5-a94b-d4d9ecd77b6d",
+            "sourceColumn": "IsCurrentFiscalYear",
+            "sourceLineageTag": "IsCurrentFiscalYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrentFiscalQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "f0266bda-cdeb-4052-a888-e596a68ad5ab",
+            "sourceColumn": "IsCurrentFiscalQuarter",
+            "sourceLineageTag": "IsCurrentFiscalQuarter",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastCalendarYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "1a53b273-7dcb-4ab4-91b2-2ef114541613",
+            "sourceColumn": "IsLastCalendarYear",
+            "sourceLineageTag": "IsLastCalendarYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastCalendarQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "bcf2a75a-23ce-4b53-9c4c-8def0d0b683a",
+            "sourceColumn": "IsLastCalendarQuarter",
+            "sourceLineageTag": "IsLastCalendarQuarter",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "8cbbed73-2e59-4a3c-ad58-a7516c904bad",
+            "sourceColumn": "IsLastMonth",
+            "sourceLineageTag": "IsLastMonth",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastWeek",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "77d4d50f-cbe8-4882-a894-0e44b488e1d8",
+            "sourceColumn": "IsLastWeek",
+            "sourceLineageTag": "IsLastWeek",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastFiscalYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "a0236c94-06d9-42e6-9661-39af90528399",
+            "sourceColumn": "IsLastFiscalYear",
+            "sourceLineageTag": "IsLastFiscalYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastFiscalQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "d1520e14-2b4f-482f-a888-f3d8b418a6b7",
+            "sourceColumn": "IsLastFiscalQuarter",
+            "sourceLineageTag": "IsLastFiscalQuarter",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFirstDayOfTheWeek",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "3a9cc8e0-9369-4d43-a699-151e271f6f5f",
+            "sourceColumn": "IsFirstDayOfTheWeek",
+            "sourceLineageTag": "IsFirstDayOfTheWeek",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFirstDayOfTheMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "665780d4-6215-4114-8fa1-51305a8f0e82",
+            "sourceColumn": "IsFirstDayOfTheMonth",
+            "sourceLineageTag": "IsFirstDayOfTheMonth",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFirstDayOfTheQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "5b6fad23-f935-41dc-80ac-873547f94952",
+            "sourceColumn": "IsFirstDayOfTheQuarter",
+            "sourceLineageTag": "IsFirstDayOfTheQuarter",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFirstDayOfTheCalendarYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "80dd981f-0c66-421a-a4a1-07dfc04873c0",
+            "sourceColumn": "IsFirstDayOfTheCalendarYear",
+            "sourceLineageTag": "IsFirstDayOfTheCalendarYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFirstDayOfTheFiscalYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "cc4e36ba-f2d6-47d1-87ac-0a25b9692db1",
+            "sourceColumn": "IsFirstDayOfTheFiscalYear",
+            "sourceLineageTag": "IsFirstDayOfTheFiscalYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFirstDayOfTheDecade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "9139a424-d42f-45d4-a9a5-9446ba875588",
+            "sourceColumn": "IsFirstDayOfTheDecade",
+            "sourceLineageTag": "IsFirstDayOfTheDecade",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsFirstDayOfTheCentury",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "6bfb9544-f391-4511-8f03-4508fae632bf",
+            "sourceColumn": "IsFirstDayOfTheCentury",
+            "sourceLineageTag": "IsFirstDayOfTheCentury",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastDayOfTheWeek",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "1a1cdc3c-ccfa-4092-93f8-32c1b0f789a5",
+            "sourceColumn": "IsLastDayOfTheWeek",
+            "sourceLineageTag": "IsLastDayOfTheWeek",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastDayOfTheMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "c89d4146-25b7-4f0c-8eb8-a9af9af132f8",
+            "sourceColumn": "IsLastDayOfTheMonth",
+            "sourceLineageTag": "IsLastDayOfTheMonth",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastDayOfTheQuarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "f4a29225-ee35-40b0-9a6f-712ae34f67b9",
+            "sourceColumn": "IsLastDayOfTheQuarter",
+            "sourceLineageTag": "IsLastDayOfTheQuarter",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastDayOfTheCalendarYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "27bd347e-df37-4344-b71d-68e6cd22560f",
+            "sourceColumn": "IsLastDayOfTheCalendarYear",
+            "sourceLineageTag": "IsLastDayOfTheCalendarYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastDayOfTheFiscalYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "6fa102ab-79d6-4da5-b297-6f7b7b169f44",
+            "sourceColumn": "IsLastDayOfTheFiscalYear",
+            "sourceLineageTag": "IsLastDayOfTheFiscalYear",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastDayOfTheDecade",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "67538a7b-561e-4372-b2bc-8c9987e9da62",
+            "sourceColumn": "IsLastDayOfTheDecade",
+            "sourceLineageTag": "IsLastDayOfTheDecade",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsLastDayOfTheCentury",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Flags",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "3f8f69ec-023c-43d8-be2e-e960024ae8d5",
+            "sourceColumn": "IsLastDayOfTheCentury",
+            "sourceLineageTag": "IsLastDayOfTheCentury",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          }
+        ],
+        "dataCategory": "Time",
+        "hierarchies": [
+          {
+            "name": "Calendar Year Hierarchy",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "Calendar Dates",
+            "levels": [
+              {
+                "name": "Calendar Year",
+                "column": "CalendarYear",
+                "lineageTag": "4463e404-2962-423d-a321-16666fc6383f",
+                "ordinal": 0
+              },
+              {
+                "name": "Calendar Quarter And Year",
+                "column": "CalendarQuarterNameAndYear",
+                "lineageTag": "0877d41c-c573-4bbd-9f2d-5cc7d881844e",
+                "ordinal": 1
+              },
+              {
+                "name": "Calendar Month And Year",
+                "column": "CalendarMonthNameAndYear",
+                "lineageTag": "c0dfac38-de97-4e3b-bc33-57e9dc81172a",
+                "ordinal": 2
+              },
+              {
+                "name": "Date",
+                "column": "Date",
+                "lineageTag": "7b8bd638-a284-470c-bc71-00ca549202f9",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "cd05d58d-b105-40a6-ae6c-c623e38700ad"
+          },
+          {
+            "name": "Fiscal Year Hierarchy",
+            "changedProperties": [
+              {
+                "property": "DisplayFolder"
+              },
+              {
+                "property": "Name"
+              }
+            ],
+            "displayFolder": "Fiscal Dates",
+            "levels": [
+              {
+                "name": "Fiscal Year",
+                "column": "FiscalYear",
+                "lineageTag": "1b8325fd-b0e5-4349-a845-808999fb5a45",
+                "ordinal": 0
+              },
+              {
+                "name": "Fiscal Quarter And Year",
+                "column": "FiscalQuarterNameAndYear",
+                "lineageTag": "4c7903c1-5db0-4dd1-8548-a268acb8fdbb",
+                "ordinal": 1
+              },
+              {
+                "name": "Fiscal Month And Year",
+                "column": "FiscalMonthNameAndYear",
+                "lineageTag": "278d30f7-b767-40a3-96e8-62f31a81c259",
+                "ordinal": 2
+              },
+              {
+                "name": "Date",
+                "column": "Date",
+                "lineageTag": "c6f87dcc-04a9-4310-b200-91c3e5c7b363",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "56c269b1-f12e-4f6c-af39-b538cfa7676c"
+          }
+        ],
+        "lineageTag": "24c203c2-8554-4e62-abf2-3d428a224500",
+        "partitions": [
+          {
+            "name": "Calendar",
+            "mode": "directLake",
+            "source": {
+              "entityName": "Calendar",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Chronological",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[Chronological].[Calendar]"
+      },
+      {
+        "name": "Commissioner Organisation",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CommissionerOrganisationKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "8b28a2f2-4b8e-4137-837e-b5fa3b92fc76",
+            "sourceColumn": "CommissionerOrganisationKey",
+            "sourceLineageTag": "CommissionerOrganisationKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeLoaded",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "6c34e209-feff-42c6-b4db-725ae35eaeb9",
+            "sourceColumn": "DateTimeLoaded",
+            "sourceLineageTag": "DateTimeLoaded",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "06454ae8-8dad-4d66-bbe0-885e523c3597",
+            "sourceColumn": "DateTimeUpdated",
+            "sourceLineageTag": "DateTimeUpdated",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeDeleted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "e0cd10eb-c7b9-477c-8078-16ef29441ed8",
+            "sourceColumn": "DateTimeDeleted",
+            "sourceLineageTag": "DateTimeDeleted",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Hidden Fields",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isHidden": true,
+            "lineageTag": "3f343a29-5abf-42b6-b568-bd411e353b3b",
+            "sourceColumn": "IsCurrent",
+            "sourceLineageTag": "IsCurrent",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidFromDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "f1dc896a-a9ba-49ec-b966-eadc14720ca0",
+            "sourceColumn": "ValidFromDate",
+            "sourceLineageTag": "ValidFromDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidToDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "a8cd4390-6033-4b3c-be6e-3b73309f192a",
+            "sourceColumn": "ValidToDate",
+            "sourceLineageTag": "ValidToDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HighWatermark",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "29040832-1274-4c2c-ac23-8a9ed8df0b2e",
+            "sourceColumn": "HighWatermark",
+            "sourceLineageTag": "HighWatermark",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organisation Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "170a12c8-8516-404a-8a6a-f88b7377d805",
+            "sourceColumn": "OrganisationCode",
+            "sourceLineageTag": "OrganisationCode",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organisation Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f7eb65a2-61dd-4492-b265-757801282b17",
+            "sourceColumn": "OrganisationName",
+            "sourceLineageTag": "OrganisationName",
+            "sourceProviderType": "varchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ICB Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ef450edb-ccb5-4fba-91e5-e26d88f1dce9",
+            "sourceColumn": "ICBCode",
+            "sourceLineageTag": "ICBCode",
+            "sourceProviderType": "varchar(50)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ICB Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "64f85749-e3f7-4260-85f7-532c30ef083b",
+            "sourceColumn": "ICBName",
+            "sourceLineageTag": "ICBName",
+            "sourceProviderType": "varchar(500)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ICB County",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "71fd82d9-99f7-45f8-810c-3544e2842b74",
+            "sourceColumn": "ICBCounty",
+            "sourceLineageTag": "ICBCounty",
+            "sourceProviderType": "varchar(100)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b45456ac-0be1-4da2-87c4-b9797fec5cdf",
+        "partitions": [
+          {
+            "name": "Commissioner Organisation",
+            "mode": "directLake",
+            "source": {
+              "entityName": "CommissionerOrganisation",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "ReferralToTreatmentDimension",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[ReferralToTreatmentDimension].[CommissionerOrganisation]"
+      },
+      {
+        "name": "Provider Address Book",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "changedProperties": [
+          {
+            "property": "Name"
+          }
+        ],
+        "columns": [
+          {
+            "name": "NHSProviderTrustKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "int64",
+            "displayFolder": "Hidden Fields",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "5cf1622b-e7e2-46ba-9f7e-bfbd1b587a87",
+            "sourceColumn": "NHSProviderTrustKey",
+            "sourceLineageTag": "NHSProviderTrustKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeLoaded",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "23f05e87-fc60-4b26-a8c9-763dbe29c1d8",
+            "sourceColumn": "DateTimeLoaded",
+            "sourceLineageTag": "DateTimeLoaded",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeUpdated",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "c2137058-fa2d-4b44-b738-e4b71c672352",
+            "sourceColumn": "DateTimeUpdated",
+            "sourceLineageTag": "DateTimeUpdated",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateTimeDeleted",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "6a2fd054-5895-4fe3-a434-aca1f5385d15",
+            "sourceColumn": "DateTimeDeleted",
+            "sourceLineageTag": "DateTimeDeleted",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IsCurrent",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "boolean",
+            "displayFolder": "Hidden Fields",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isHidden": true,
+            "lineageTag": "81ffb08b-84b2-4721-9d68-0c7909673480",
+            "sourceColumn": "IsCurrent",
+            "sourceLineageTag": "IsCurrent",
+            "sourceProviderType": "bit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidFromDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "053a8201-2a81-4068-934f-f3965d949e5b",
+            "sourceColumn": "ValidFromDate",
+            "sourceLineageTag": "ValidFromDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ValidToDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "85cd97b0-d291-4999-8654-64d2ee2fbef1",
+            "sourceColumn": "ValidToDate",
+            "sourceLineageTag": "ValidToDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "HighWatermark",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "fe799f93-948f-4ef1-aa98-bdb89f315ba7",
+            "sourceColumn": "HighWatermark",
+            "sourceLineageTag": "HighWatermark",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organisation Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4df6ee96-70a4-470a-beb8-1a7261ea7625",
+            "sourceColumn": "OrganisationCode",
+            "sourceLineageTag": "OrganisationCode",
+            "sourceProviderType": "varchar(5)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Organisation Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1af64581-2c68-49ad-9b67-28454d2ff4ea",
+            "sourceColumn": "OrganisationName",
+            "sourceLineageTag": "OrganisationName",
+            "sourceProviderType": "varchar(100)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "National Grouping Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a5055f3a-8c7e-486d-8d82-cac4df5d0768",
+            "sourceColumn": "NationalGroupingCode",
+            "sourceLineageTag": "NationalGroupingCode",
+            "sourceProviderType": "varchar(5)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "High Level Health Geography Code",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fe433e2c-4120-4ce9-a776-6622ebeb1f5b",
+            "sourceColumn": "HighLevelHealthGeographyCode",
+            "sourceLineageTag": "HighLevelHealthGeographyCode",
+            "sourceProviderType": "varchar(5)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AddressLine1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "1948d41d-dd66-4097-82f2-11c21c289a5b",
+            "sourceColumn": "AddressLine1",
+            "sourceLineageTag": "AddressLine1",
+            "sourceProviderType": "varchar(35)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AddressLine2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "ce0b2c08-7cad-47d1-afdf-9e858f941a15",
+            "sourceColumn": "AddressLine2",
+            "sourceLineageTag": "AddressLine2",
+            "sourceProviderType": "varchar(35)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AddressLine3",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "f0e24d6a-bed5-4b0e-87f4-6b0724baebb0",
+            "sourceColumn": "AddressLine3",
+            "sourceLineageTag": "AddressLine3",
+            "sourceProviderType": "varchar(35)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AddressLine4",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "eb578076-18c3-4783-92c0-edd04034d02b",
+            "sourceColumn": "AddressLine4",
+            "sourceLineageTag": "AddressLine4",
+            "sourceProviderType": "varchar(35)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "AddressLine5",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "string",
+            "displayFolder": "Hidden Fields",
+            "isHidden": true,
+            "lineageTag": "0d9d1029-5791-4629-b64d-fbaba21c28d8",
+            "sourceColumn": "AddressLine5",
+            "sourceLineageTag": "AddressLine5",
+            "sourceProviderType": "varchar(35)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Town Or City",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DataCategory"
+              }
+            ],
+            "dataCategory": "City",
+            "dataType": "string",
+            "lineageTag": "4b32f7c7-eac6-41c1-91a8-75fe042b1c0a",
+            "sourceColumn": "TownOrCity",
+            "sourceLineageTag": "TownOrCity",
+            "sourceProviderType": "varchar(35)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Postcode Area",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "DataCategory"
+              }
+            ],
+            "dataCategory": "PostalCode",
+            "dataType": "string",
+            "lineageTag": "bea5e244-253a-4651-bbe5-b16980e6d5ea",
+            "sourceColumn": "PostcodeArea",
+            "sourceLineageTag": "PostcodeArea",
+            "sourceProviderType": "varchar(4)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Postcode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "DataCategory"
+              }
+            ],
+            "dataCategory": "PostalCode",
+            "dataType": "string",
+            "lineageTag": "5969c251-4c99-4da0-9bdb-6a1197f9a397",
+            "sourceColumn": "Postcode",
+            "sourceLineageTag": "Postcode",
+            "sourceProviderType": "varchar(8)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "OpenDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "57e68f46-b301-4f9c-879c-2a0faf0ecb7a",
+            "sourceColumn": "OpenDate",
+            "sourceLineageTag": "OpenDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CloseDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              },
+              {
+                "property": "DisplayFolder"
+              }
+            ],
+            "dataType": "dateTime",
+            "displayFolder": "Hidden Fields",
+            "formatString": "General Date",
+            "isHidden": true,
+            "lineageTag": "7320bb68-f653-48c0-a654-ff8f877eec97",
+            "sourceColumn": "CloseDate",
+            "sourceLineageTag": "CloseDate",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "223d3049-7024-4ed6-b250-96fbe275178f",
+        "partitions": [
+          {
+            "name": "Provider Address Book",
+            "mode": "directLake",
+            "source": {
+              "entityName": "NHSProviderTrust",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "OrganisationDataServiceDimension",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[OrganisationDataServiceDimension].[NHSProviderTrust]"
+      }
+    ]
+  }
+}

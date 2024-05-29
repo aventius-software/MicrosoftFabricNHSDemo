@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Referral To Treatment Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7cf82a32-e3dc-4448-8ea3-3fb855998a8a"
+  }
+}

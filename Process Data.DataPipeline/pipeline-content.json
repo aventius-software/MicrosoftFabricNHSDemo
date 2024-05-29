@@ -1,0 +1,682 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "DataWarehouseSource",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "DataWarehouseTable",
+            "typeProperties": {
+              "schema": "dbo",
+              "table": "vwDataSourcesToProcess"
+            },
+            "schema": [],
+            "linkedService": {
+              "properties": {
+                "type": "DataWarehouse",
+                "typeProperties": {
+                  "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                  "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                },
+                "annotations": []
+              },
+              "name": "ControlWarehouse"
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get data source metadata",
+        "dependsOn": []
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "batchCount": 1,
+          "items": {
+            "value": "@activity('Get data source metadata').output.value",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "IfCondition",
+              "typeProperties": {
+                "expression": {
+                  "value": "@item().ProcessIntoStaging",
+                  "type": "Expression"
+                },
+                "ifTrueActivities": [
+                  {
+                    "type": "TridentNotebook",
+                    "typeProperties": {
+                      "notebookId": "3d29753d-6141-4ed1-9666-f926a8996df3",
+                      "workspaceId": "00000000-0000-0000-0000-000000000000",
+                      "parameters": {
+                        "join_columns": {
+                          "value": {
+                            "value": "@item().JoinColumns",
+                            "type": "Expression"
+                          },
+                          "type": "string"
+                        },
+                        "dataset_name": {
+                          "value": {
+                            "value": "@item().LakehouseDatasetName",
+                            "type": "Expression"
+                          },
+                          "type": "string"
+                        },
+                        "subset_name": {
+                          "value": {
+                            "value": "@item().LakehouseSubsetName",
+                            "type": "Expression"
+                          },
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Merge landing into staging",
+                    "dependsOn": [
+                      {
+                        "activity": "Mark staging as started",
+                        "dependencyConditions": [
+                          "Succeeded"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspRecordStagingError]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        },
+                        "message": {
+                          "value": {
+                            "value": "@activity('Merge landing into staging').error.Message",
+                            "type": "Expression"
+                          },
+                          "type": "String"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Record staging error",
+                    "dependsOn": [
+                      {
+                        "activity": "Merge landing into staging",
+                        "dependencyConditions": [
+                          "Failed"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspMarkStagingAsStarted]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Mark staging as started",
+                    "dependsOn": []
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspMarkStagingAsComplete]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Mark staging as complete",
+                    "dependsOn": [
+                      {
+                        "activity": "Merge landing into staging",
+                        "dependencyConditions": [
+                          "Succeeded"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "ifFalseActivities": []
+              },
+              "name": "If run staging merge",
+              "dependsOn": [
+                {
+                  "activity": "If run landing import",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "IfCondition",
+              "typeProperties": {
+                "expression": {
+                  "value": "@item().ProcessIntoWarehouse",
+                  "type": "Expression"
+                },
+                "ifTrueActivities": [
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": {
+                        "value": "@item().WarehouseProcedure",
+                        "type": "Expression"
+                      },
+                      "storedProcedureParameters": {
+                        "customOptions": {
+                          "value": {
+                            "value": "@item().WarehouseProcedureParameter",
+                            "type": "Expression"
+                          },
+                          "type": "String"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "7b9b162c-6eeb-4af1-946d-72ca1614d795",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "DataWarehouse",
+                      "objectId": "7b9b162c-6eeb-4af1-946d-72ca1614d795"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Process staging into warehouse",
+                    "dependsOn": [
+                      {
+                        "activity": "Mark warehouse as started",
+                        "dependencyConditions": [
+                          "Succeeded"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspMarkWarehouseAsComplete]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Mark warehouse as complete",
+                    "dependsOn": [
+                      {
+                        "activity": "Process staging into warehouse",
+                        "dependencyConditions": [
+                          "Succeeded"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspMarkWarehouseAsStarted]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Mark warehouse as started",
+                    "dependsOn": []
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspRecordWarehouseError]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        },
+                        "message": {
+                          "value": {
+                            "value": "@activity('Process staging into warehouse').error.Message",
+                            "type": "Expression"
+                          },
+                          "type": "String"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Record warehouse error",
+                    "dependsOn": [
+                      {
+                        "activity": "Process staging into warehouse",
+                        "dependencyConditions": [
+                          "Failed"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "ifFalseActivities": []
+              },
+              "name": "If run warehouse import",
+              "dependsOn": [
+                {
+                  "activity": "If run staging merge",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "IfCondition",
+              "typeProperties": {
+                "expression": {
+                  "value": "@item().ProcessIntoLanding",
+                  "type": "Expression"
+                },
+                "ifTrueActivities": [
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspMarkLandingAsComplete]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Mark landing as complete",
+                    "dependsOn": [
+                      {
+                        "activity": "Check which import method",
+                        "dependencyConditions": [
+                          "Succeeded"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Switch",
+                    "typeProperties": {
+                      "on": {
+                        "value": "@toLower(item().IngestionMechanism)",
+                        "type": "Expression"
+                      },
+                      "cases": [
+                        {
+                          "value": "notebook",
+                          "activities": [
+                            {
+                              "type": "TridentNotebook",
+                              "typeProperties": {
+                                "notebookId": "724c3513-9633-48bc-81c1-f32bb1d0ada6",
+                                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                                "parameters": {
+                                  "download_url": {
+                                    "value": {
+                                      "value": "@item().Url",
+                                      "type": "Expression"
+                                    },
+                                    "type": "string"
+                                  },
+                                  "file_format": {
+                                    "value": {
+                                      "value": "@item().DataFormat",
+                                      "type": "Expression"
+                                    },
+                                    "type": "string"
+                                  },
+                                  "dataset_name": {
+                                    "value": {
+                                      "value": "@item().LakehouseDatasetName",
+                                      "type": "Expression"
+                                    },
+                                    "type": "string"
+                                  },
+                                  "subset_name": {
+                                    "value": {
+                                      "value": "@item().LakehouseSubsetName",
+                                      "type": "Expression"
+                                    },
+                                    "type": "string"
+                                  },
+                                  "has_header_row": {
+                                    "value": {
+                                      "value": "@item().HasHeaderRow",
+                                      "type": "Expression"
+                                    },
+                                    "type": "bool"
+                                  }
+                                }
+                              },
+                              "policy": {
+                                "timeout": "0.12:00:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureInput": false,
+                                "secureOutput": false
+                              },
+                              "name": "Run file download notebook to import data",
+                              "description": "Runs the file download into landing notebook",
+                              "dependsOn": []
+                            }
+                          ]
+                        }
+                      ],
+                      "defaultActivities": []
+                    },
+                    "name": "Check which import method",
+                    "dependsOn": [
+                      {
+                        "activity": "Mark landing as started",
+                        "dependencyConditions": [
+                          "Succeeded"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspMarkLandingAsStarted]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Mark landing as started",
+                    "dependsOn": []
+                  },
+                  {
+                    "type": "SqlServerStoredProcedure",
+                    "typeProperties": {
+                      "storedProcedureName": "[dbo].[uspRecordLandingError]",
+                      "storedProcedureParameters": {
+                        "dataSourceKey": {
+                          "value": {
+                            "value": "@item().DataSourceKey",
+                            "type": "Expression"
+                          },
+                          "type": "Int32"
+                        },
+                        "message": {
+                          "value": {
+                            "value": "@activity('Check which import method').error.Message",
+                            "type": "Expression"
+                          },
+                          "type": "String"
+                        }
+                      }
+                    },
+                    "linkedService": {
+                      "properties": {
+                        "type": "DataWarehouse",
+                        "typeProperties": {
+                          "artifactId": "6215c155-588e-4b9e-8a35-82a42ce50300",
+                          "endpoint": "alph2lljtdcunpg75joconoc2q-mn5cs7nm5x6ergdvmxn7svde3m.datawarehouse.fabric.microsoft.com"
+                        },
+                        "annotations": []
+                      },
+                      "name": "ControlWarehouse",
+                      "objectId": "6215c155-588e-4b9e-8a35-82a42ce50300"
+                    },
+                    "policy": {
+                      "timeout": "0.12:00:00",
+                      "retry": 0,
+                      "retryIntervalInSeconds": 30,
+                      "secureInput": false,
+                      "secureOutput": false
+                    },
+                    "name": "Record landing failed",
+                    "dependsOn": [
+                      {
+                        "activity": "Check which import method",
+                        "dependencyConditions": [
+                          "Failed"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "ifFalseActivities": []
+              },
+              "name": "If run landing import",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "Process each data source",
+        "dependsOn": [
+          {
+            "activity": "Get data source metadata",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
